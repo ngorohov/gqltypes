@@ -122,7 +122,7 @@ func (d Date) MarshalGQL(w io.Writer) {
 }
 
 func (d Date) MarshalJSON() ([]byte, error) {
-	return []byte(fmt.Sprintf("%d-%02d-%02d", d.Year, d.Month, d.Day)), nil
+	return []byte(strconv.Quote(fmt.Sprintf("%d-%02d-%02d", d.Year, d.Month, d.Day))), nil
 }
 
 // UnmarshalGQL subj
